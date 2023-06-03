@@ -29,19 +29,6 @@ namespace ramenAOL.Repository
             db.SaveChanges();
         }
 
-        public static string updateRamen(string name, string broth, string price)
-        {
-            RamenDatabaseEntities1 db = new RamenDatabaseEntities1();
-
-            //Raman item = db.Ramen.Find(id);
-
-            RamenFactory.updateRamen(name, broth, price);
-
-            db.SaveChanges();
-
-            return "success";
-        }
-
         public static List<Raman> getRamen()
         {
             RamenDatabaseEntities1 db = new RamenDatabaseEntities1();

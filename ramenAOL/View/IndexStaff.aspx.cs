@@ -29,24 +29,5 @@ namespace ramenAOL.View
             Response.Redirect("~/View/IndexStaff.aspx");
         }
 
-        protected void ramenGV_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-        }
-
-        protected void ramenGV_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-
-        }
-
-        protected void ramenGV_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-
-        }
-
-        protected void ramenGV_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        {
-
-        }
     }
 }

@@ -18,14 +18,5 @@ namespace ramenAOL.Controller
             return RamenRepository.insertRamen(name, broth, price);
         }
 
-        public static string updateRamen(string name, string broth, string price)
-        {
-            if (name.Equals("") || broth.Equals("") || price.Equals(""))
-            {
-                return "Please fill all the field";
-            }
-
-            return RamenRepository.updateRamen(name, broth, price);
-        }
     }
 }
