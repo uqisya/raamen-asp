@@ -1,4 +1,5 @@
-﻿using ramenAOL.Model;
+﻿using ramenAOL.Controller;
+using ramenAOL.Model;
 using ramenAOL.Repository;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace ramenAOL.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ramenGV.DataSource = RamenRepository.getRamen();
+            ramenGV.DataSource = RamenController.getAllRamen();
             ramenGV.DataBind();
         }
 
@@ -29,5 +30,16 @@ namespace ramenAOL.View
             Response.Redirect("~/View/IndexStaff.aspx");
         }
 
+        protected void ramenGV_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            // ambil id, kita ambil row yang lagi diklik
+            GridViewRow row = ramenGV.Rows[e.NewEditIndex];
+
+            // ambil kolom si id nya
+            int id = int.Parse(row.Cells[1].Text);
+
+            // passing id ke page update page pake query string
+            Response.Redirect("~/View/Ramen/UpdateRamen.aspx?id=" + id);
+        }
     }
 }
