@@ -94,14 +94,15 @@
       <LastGenOutput>RamenModel.cs</LastGenOutput>
     </Content>
     <Content Include="View\Admin.aspx" />
+    <Content Include="View\css\style.css" />
     <Content Include="View\IndexStaff.aspx" />
     <Content Include="View\Order\History.aspx" />
     <Content Include="View\Order\OrderQueue.aspx" />
     <Content Include="View\Order\OrderRamen.aspx" />
     <Content Include="View\Order\Report.aspx" />
-    <Content Include="View\Ramen\InsertRamen.aspx" />
+    <Content Include="View\Ramen\lib\InsertRamen.aspx" />
     <Content Include="View\Ramen\ManageRamen.aspx" />
-    <Content Include="View\Ramen\UpdateRamen.aspx" />
+    <Content Include="View\Ramen\lib\UpdateRamen.aspx" />
     <Content Include="View\testing_session.aspx" />
     <Content Include="View\User\Home.aspx" />
     <Content Include="View\User\Profile.aspx" />
@@ -227,11 +228,11 @@
     <Compile Include="View\Order\Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Ramen\InsertRamen.aspx.cs">
+    <Compile Include="View\Ramen\lib\InsertRamen.aspx.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Ramen\InsertRamen.aspx.designer.cs">
+    <Compile Include="View\Ramen\lib\InsertRamen.aspx.designer.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Ramen\ManageRamen.aspx.cs">
@@ -241,11 +242,11 @@
     <Compile Include="View\Ramen\ManageRamen.aspx.designer.cs">
       <DependentUpon>ManageRamen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Ramen\UpdateRamen.aspx.cs">
+    <Compile Include="View\Ramen\lib\UpdateRamen.aspx.cs">
       <DependentUpon>UpdateRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Ramen\UpdateRamen.aspx.designer.cs">
+    <Compile Include="View\Ramen\lib\UpdateRamen.aspx.designer.cs">
       <DependentUpon>UpdateRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\testing_session.aspx.cs">

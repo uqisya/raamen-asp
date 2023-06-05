@@ -1,0 +1,52 @@
+﻿body {
+}
+
+.header_top{
+    margin-top: 1rem;
+}
+
+.header_hello{
+    font-size:x-large;
+    float:left !important;
+    margin:auto;
+}
+
+.lblUsername{
+    font-weight:bold;
+}
+
+.btnInsertHeader{
+    display:flex;
+    justify-content:end;
+}
+
+.btnInsertRamen{
+    height:2rem;
+}
+
+.hr {
+    border: none;
+    height: 0.5px;
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}
+
+.nav-admin{
+/*    float: left !important;*/
+}
+
+.btnAdminNav {
+    display: flex;
+    justify-content:end;
+}
+
+.btnAdminNav input{
+    height:2rem;
+    margin-left:10px;
+}
+
+h1.headerNav{
+    float:left !important;
+    margin:0px;
+}

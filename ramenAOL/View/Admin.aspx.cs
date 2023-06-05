@@ -15,7 +15,7 @@ namespace ramenAOL.View
         {
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
-                Response.Redirect("~/View/login.aspx");
+                Response.Redirect("~/View/testing_session.aspx");
             }
             else
             {
