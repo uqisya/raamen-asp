@@ -18,7 +18,7 @@ namespace ramenAOL.View.Ramen
                 int id = int.Parse(Request.QueryString["id"]);
                 Raman item = RamenController.getRamenBasedOnId(id);
                 txtName.Text = item.Name;
-                txtBroth.Text = item.Broth;
+                txtBroth.Text = item.Borth;
                 txtPrice.Text = item.Price;
             }
         }

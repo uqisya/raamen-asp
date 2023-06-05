@@ -9,7 +9,7 @@ namespace ramenAOL.Repository
 {
     public class RamenRepository
     {
-        static RamenDatabaseEntities1 db = new RamenDatabaseEntities1();
+        static RamenDatabase2Entities2 db = new RamenDatabase2Entities2();
         public static string insertRamen(Raman item)
         {
             //Raman item = RamenFactory.insertRamen(name, broth, price);
@@ -25,7 +25,7 @@ namespace ramenAOL.Repository
             Raman item = db.Ramen.Find(id);
 
             item.Name = name;
-            item.Broth = broth;
+            item.Borth = broth;
             item.Price = price; 
 
             db.SaveChanges();

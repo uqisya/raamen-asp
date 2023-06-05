@@ -76,63 +76,87 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\RamenDatabase.mdf" />
+    <Content Include="App_Data\RamenDatabase2.mdf" />
+    <Content Include="App_Data\RamenDatabase2_log.ldf">
+      <DependentUpon>RamenDatabase2.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\RamenDatabase_log.ldf">
       <DependentUpon>RamenDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Model\WebAppModel.Context.tt">
+    <Content Include="Model\RamenModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebAppModel.edmx</DependentUpon>
-      <LastGenOutput>WebAppModel.Context.cs</LastGenOutput>
+      <DependentUpon>RamenModel.edmx</DependentUpon>
+      <LastGenOutput>RamenModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\WebAppModel.tt">
+    <Content Include="Model\RamenModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebAppModel.edmx</DependentUpon>
-      <LastGenOutput>WebAppModel.cs</LastGenOutput>
+      <DependentUpon>RamenModel.edmx</DependentUpon>
+      <LastGenOutput>RamenModel.cs</LastGenOutput>
     </Content>
+    <Content Include="View\Admin.aspx" />
     <Content Include="View\IndexStaff.aspx" />
+    <Content Include="View\Order\History.aspx" />
+    <Content Include="View\Order\OrderQueue.aspx" />
+    <Content Include="View\Order\OrderRamen.aspx" />
+    <Content Include="View\Order\Report.aspx" />
     <Content Include="View\Ramen\InsertRamen.aspx" />
+    <Content Include="View\Ramen\ManageRamen.aspx" />
     <Content Include="View\Ramen\UpdateRamen.aspx" />
+    <Content Include="View\testing_session.aspx" />
+    <Content Include="View\User\Home.aspx" />
+    <Content Include="View\User\Profile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\RamenController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Factory\RamenFactory.cs" />
+    <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\RamenHandler.cs" />
+    <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Detail.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Header.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Meat.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Raman.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RamenModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RamenModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RamenModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RamenModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RamenModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RamenModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Role.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs">
-      <DependentUpon>WebAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\WebAppModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WebAppModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\WebAppModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WebAppModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\WebAppModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WebAppModel.edmx</DependentUpon>
+      <DependentUpon>RamenModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RamenRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="View\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\IndexStaff.aspx.cs">
       <DependentUpon>IndexStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,12 +171,75 @@
     <Compile Include="View\MasterWebApp.Master.designer.cs">
       <DependentUpon>MasterWebApp.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\Navbar\AdminNavbar.Master.cs">
+      <DependentUpon>AdminNavbar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Navbar\AdminNavbar.Master.designer.cs">
+      <DependentUpon>AdminNavbar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Navbar\CustomerNavbar.Master.cs">
+      <DependentUpon>CustomerNavbar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Navbar\CustomerNavbar.Master.designer.cs">
+      <DependentUpon>CustomerNavbar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Navbar\GuestNavbar.Master.cs">
+      <DependentUpon>GuestNavbar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Navbar\GuestNavbar.Master.designer.cs">
+      <DependentUpon>GuestNavbar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Navbar\StaffNavbar.Master.cs">
+      <DependentUpon>StaffNavbar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Navbar\StaffNavbar.Master.designer.cs">
+      <DependentUpon>StaffNavbar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\History.aspx.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Order\History.aspx.designer.cs">
+      <DependentUpon>History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\OrderQueue.aspx.cs">
+      <DependentUpon>OrderQueue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Order\OrderQueue.aspx.designer.cs">
+      <DependentUpon>OrderQueue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\OrderRamen.aspx.cs">
+      <DependentUpon>OrderRamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Order\OrderRamen.aspx.designer.cs">
+      <DependentUpon>OrderRamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Order\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Order\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Ramen\InsertRamen.aspx.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Ramen\InsertRamen.aspx.designer.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ramen\ManageRamen.aspx.cs">
+      <DependentUpon>ManageRamen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Ramen\ManageRamen.aspx.designer.cs">
+      <DependentUpon>ManageRamen.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Ramen\UpdateRamen.aspx.cs">
       <DependentUpon>UpdateRamen.aspx</DependentUpon>
@@ -161,17 +248,42 @@
     <Compile Include="View\Ramen\UpdateRamen.aspx.designer.cs">
       <DependentUpon>UpdateRamen.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\testing_session.aspx.cs">
+      <DependentUpon>testing_session.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\testing_session.aspx.designer.cs">
+      <DependentUpon>testing_session.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model\WebAppModel.edmx">
+    <EntityDeploy Include="Model\RamenModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebAppModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>RamenModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Model\WebAppModel.edmx.diagram">
-      <DependentUpon>WebAppModel.edmx</DependentUpon>
+    <Content Include="Model\RamenModel.edmx.diagram">
+      <DependentUpon>RamenModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="View\MasterWebApp.Master" />
+    <Content Include="View\Navbar\CustomerNavbar.Master" />
+    <Content Include="View\Navbar\StaffNavbar.Master" />
+    <Content Include="View\Navbar\AdminNavbar.Master" />
+    <Content Include="View\Navbar\GuestNavbar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

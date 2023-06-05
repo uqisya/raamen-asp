@@ -15,7 +15,7 @@ namespace ramenAOL.Factory
             // tambah drop down untuk type id meat dari table Meat
 
             item.Name = name;
-            item.Broth = broth;
+            item.Borth = broth;
             item.Price = price;
 
             return item;
@@ -27,7 +27,7 @@ namespace ramenAOL.Factory
             Raman item = new Raman();
 
             item.Name = name;
-            item.Broth = broth;
+            item.Borth = broth;
             item.Price = price;
 
             return item;

@@ -21,9 +21,9 @@ namespace ramenAOL.Model
         }
     
         public int Id { get; set; }
-        public Nullable<int> Meatid { get; set; }
+        public int MeatId { get; set; }
         public string Name { get; set; }
-        public string Broth { get; set; }
+        public string Borth { get; set; }
         public string Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
