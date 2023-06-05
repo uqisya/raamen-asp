@@ -75,13 +75,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\RamenDatabase.mdf" />
     <Content Include="App_Data\RamenDatabase2.mdf" />
     <Content Include="App_Data\RamenDatabase2_log.ldf">
       <DependentUpon>RamenDatabase2.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\RamenDatabase_log.ldf">
-      <DependentUpon>RamenDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Model\RamenModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

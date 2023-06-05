@@ -11,9 +11,9 @@ namespace ramenAOL.Handler
     public class RamenHandler
     {
         // insert
-        public static string insertRamen(string name, string broth, string price)
+        public static string insertRamen(int meatId, string name, string broth, string price)
         {
-            Raman item = RamenFactory.insertRamen(name, broth, price);
+            Raman item = RamenFactory.insertRamen(meatId, name, broth, price);
             return RamenRepository.insertRamen(item);
         }
 

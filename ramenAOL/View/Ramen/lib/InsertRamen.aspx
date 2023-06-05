@@ -9,6 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lblMeatId" runat="server" Text="Meat: "></asp:Label>
+            <asp:DropDownList ID="ddlMeatId" runat="server"></asp:DropDownList>
+            <br />
+
             <asp:Label ID="lblName" runat="server" Text="Ramen Name: "></asp:Label>
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             <br />
@@ -23,7 +27,7 @@
 
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
             <br />
-            <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblStatus" runat="server" Text="[status]"></asp:Label>
 
         </div>
     </form>

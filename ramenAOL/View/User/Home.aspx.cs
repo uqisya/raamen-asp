@@ -31,7 +31,7 @@ namespace ramenAOL.View.User
                     user = (ramenAOL.Model.User)Session["user"];
                 }
 
-                helloTxt.Text = "Hello, " + user.Username + "!";
+                lblUsername.Text = user.Username;
 
                 var listStaffDB = (from x in db.Users where x.RoleId == 2 select x);
                 foreach (var x in listStaffDB)
@@ -61,18 +61,16 @@ namespace ramenAOL.View.User
             {
                 if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
                 {
+                    Response.Redirect("~/View/testing_session.aspx");
+                }
+
+                if (user.RoleId == 1)
+                {
                     Page.MasterPageFile = "~/View/Navbar/AdminNavbar.master";
                 }
-                else
+                else if (user.RoleId == 2)
                 {
-                    if (user.RoleId == 1)
-                    {
-                        Page.MasterPageFile = "~/View/Navbar/AdminNavbar.master";
-                    }
-                    else if (user.RoleId == 2)
-                    {
-                        Page.MasterPageFile = "~/View/Navbar/GuestNavbar.master";
-                    }
+                    Page.MasterPageFile = "~/View/Navbar/GuestNavbar.master";
                 }
                 
             }

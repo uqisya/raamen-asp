@@ -11,13 +11,13 @@ namespace ramenAOL.Controller
     public class RamenController
     {
         // insert
-        public static string insertRamen(string name, string broth, string price)
+        public static string insertRamen(int meatId, string name, string broth, string price)
         {
             if(name.Equals("") || broth.Equals("") || price.Equals(""))
             {
                 return "Please fill all the field";
             }
-            return RamenHandler.insertRamen(name, broth, price);
+            return RamenHandler.insertRamen(meatId, name, broth, price);
         }
 
         // update

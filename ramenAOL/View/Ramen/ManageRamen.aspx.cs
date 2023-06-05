@@ -17,13 +17,14 @@ namespace ramenAOL.View.Ramen
             ramenGV.DataSource = RamenController.getAllRamen();
             ramenGV.DataBind();
 
-            lblUsername.Text = user.Username;
+            //lblUsername.Text = user.Username;
         }
 
         //PreInit event of your desired page
         protected override void OnPreInit(EventArgs e)
         {
             ramenAOL.Model.User user = (ramenAOL.Model.User)Session["user"];
+
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
                 Response.Redirect("~/View/testing_session.aspx");
@@ -65,6 +66,11 @@ namespace ramenAOL.View.Ramen
 
             // passing id ke page update page pake query string
             Response.Redirect("~/View/Ramen/lib/UpdateRamen.aspx?id=" + id);
+        }
+
+        protected void btnInsertRamen_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Ramen/lib/InsertRamen.aspx");
         }
     }
 }

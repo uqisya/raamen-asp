@@ -7,14 +7,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
 <%--    <h1>ini manage ramen page</h1>
     <h2>bisa diakses oleh staff, dan admin</h2>--%>
-    <hr />
     <div class="header_top">
-        <p class="header_hello">Hi,
-            <asp:Label CssClass="lblUsername" ID="lblUsername" runat="server" Text=""></asp:Label>
-            Selamat Datang.
-        </p>
+        <h1 class="headerNav">Ramen List</h1>
         <div class="btnInsertHeader">
-            <asp:Button CssClass="btnInsertRamen" ID="btnInsertRamen" runat="server" Text="Insert Ramen" />
+            <asp:Button CssClass="btnInsertRamen" ID="btnInsertRamen" runat="server" Text="Insert Ramen" OnClick="btnInsertRamen_Click" />
         </div>
     </div>
 

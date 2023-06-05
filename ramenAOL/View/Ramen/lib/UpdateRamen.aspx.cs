@@ -37,7 +37,7 @@ namespace ramenAOL.View.Ramen
             RamenController.updateRamen(id, name, broth, price);
 
             // redirect ke index staff
-            Response.Redirect("~/View/IndexStaff.aspx");
+            Response.Redirect("~/View/Ramen/ManageRamen.aspx");
         }
 
     }

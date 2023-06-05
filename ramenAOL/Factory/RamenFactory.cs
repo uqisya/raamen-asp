@@ -9,11 +9,12 @@ namespace ramenAOL.Factory
     public class RamenFactory
     {
         // insert
-        public static Raman insertRamen(string name, string broth, string price)
+        public static Raman insertRamen(int meatId, string name, string broth, string price)
         {
             Raman item = new Raman();
             // tambah drop down untuk type id meat dari table Meat
 
+            item.MeatId = meatId;
             item.Name = name;
             item.Borth = broth;
             item.Price = price;
